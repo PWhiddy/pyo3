@@ -626,8 +626,6 @@
 <span id="620">620</span>
 <span id="621">621</span>
 <span id="622">622</span>
-<span id="623">623</span>
-<span id="624">624</span>
 </pre><pre class="rust"><code><span class="doccomment">//! Safe Rust wrappers for types defined in the Python `datetime` library</span>
 <span class="doccomment">//!</span>
 <span class="doccomment">//! For more details about these types, see the [Python</span>
@@ -1191,14 +1189,12 @@
                 <span class="string">&quot;import datetime; assert dt == datetime.datetime.fromtimestamp(100)&quot;</span>
             );
 
-            {
-                <span class="kw">let</span> <span class="ident">dt</span> <span class="op">=</span> <span class="ident">PyDateTime::from_timestamp</span>(<span class="ident">py</span>, <span class="number">100.0</span>, <span class="prelude-val">Some</span>(<span class="ident">timezone_utc</span>(<span class="ident">py</span>))).<span class="ident">unwrap</span>();
-                <span class="macro">py_run!</span>(
+            <span class="kw">let</span> <span class="ident">dt</span> <span class="op">=</span> <span class="ident">PyDateTime::from_timestamp</span>(<span class="ident">py</span>, <span class="number">100.0</span>, <span class="prelude-val">Some</span>(<span class="ident">timezone_utc</span>(<span class="ident">py</span>))).<span class="ident">unwrap</span>();
+            <span class="macro">py_run!</span>(
                 <span class="ident">py</span>,
                 <span class="ident">dt</span>,
                 <span class="string">&quot;import datetime; assert dt == datetime.datetime.fromtimestamp(100, datetime.timezone.utc)&quot;</span>
             );
-            }
         })
     }
 
@@ -1253,5 +1249,5 @@
     }
 }
 </code></pre></div>
-</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pyo3" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0-nightly (87588a2af 2022-07-13)" ></div>
+</section></div></main><div id="rustdoc-vars" data-root-path="../../../" data-current-crate="pyo3" data-themes="ayu,dark,light" data-resource-suffix="" data-rustdoc-version="1.64.0-nightly (c2f428d2f 2022-07-14)" ></div>
 </body></html>
